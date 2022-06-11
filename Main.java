@@ -10,15 +10,15 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Do you want do encrypt(e) or crack(c) a message?");
 		Scanner scanner = new Scanner(System.in);
-		char mode = scanner.nextLine().charAt(0);
+		String mode = scanner.nextLine();
 		
-		if(mode == 'e') {
+		if(mode.equals("e")) {
 			System.out.print("Which message do you want to encrypt?: ");
 			String message = scanner.nextLine();
 			System.out.print("Which key do you want to use for the encryption (a number from 1 - 26)?: ");
 			int key = scanner.nextInt();
 			System.out.println(encrypt(message, key));
-		} else if(mode == 'c'){
+		} else if(mode.equals("c")){
 			System.out.print("Which encrypted String do you want to crack?: ");
 			String encodedString = scanner.nextLine();
 			crackCaesar(encodedString);
@@ -38,6 +38,8 @@ public class Main {
 		char[] encryptedChars = encodedString.toCharArray();
 		char[] decryptedChars = new char[encryptedChars.length];
 
+		boolean crackFound = false;
+		
         for(int i = 0; i < 26; i++){
             String decryptedStringOnlyAlphabetic = "";
             
@@ -56,9 +58,14 @@ public class Main {
             for(String s : decryptedWordsOnlyAlphabetic) {
             	if(wordList.contains(s)) {
             		System.out.println("Possible crack found: \"" + decryptedString + "\"");
+            		crackFound = true;
             		break;
             	}
             }
+            
+        }
+        if(!crackFound) {
+        	System.out.println("No crack found!");
         }
 	}
 	
