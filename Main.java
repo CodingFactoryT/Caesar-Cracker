@@ -8,18 +8,18 @@ import java.nio.file.Paths;
 
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Do you want do encode(e) or crack(c) a message?");
+		System.out.println("Do you want do encrypt(e) or crack(c) a message?");
 		Scanner scanner = new Scanner(System.in);
 		char mode = scanner.nextLine().charAt(0);
 		
 		if(mode == 'e') {
-			System.out.print("Which message do you want to encode?: ");
+			System.out.print("Which message do you want to encrypt?: ");
 			String message = scanner.nextLine();
 			System.out.print("Which key do you want to use for the encryption (a number from 1 - 26)?: ");
 			int key = scanner.nextInt();
 			System.out.println(encode(message, key));
 		} else if(mode == 'c'){
-			System.out.print("Which encoded String do you want to crack?: ");
+			System.out.print("Which encrypted String do you want to crack?: ");
 			String encodedString = scanner.nextLine();
 			crackCaesar(encodedString);
 		}
