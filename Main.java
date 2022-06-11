@@ -17,7 +17,7 @@ public class Main {
 			String message = scanner.nextLine();
 			System.out.print("Which key do you want to use for the encryption (a number from 1 - 26)?: ");
 			int key = scanner.nextInt();
-			System.out.println(encode(message, key));
+			System.out.println(encrypt(message, key));
 		} else if(mode == 'c'){
 			System.out.print("Which encrypted String do you want to crack?: ");
 			String encodedString = scanner.nextLine();
@@ -62,7 +62,7 @@ public class Main {
         }
 	}
 	
-	private static String encode(String decryptedString, int key) {
+	private static String encrypt(String decryptedString, int key) {
 		char[] decryptedChars = decryptedString.toCharArray();
 		char[] encryptedChars = new char[decryptedChars.length];
 
