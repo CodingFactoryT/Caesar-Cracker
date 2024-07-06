@@ -3,5 +3,6 @@ The Caesar-Cracker is a program we developed in a computer science lesson at sch
 
 # How it works
 The Caesar-Cracker will generate 26 versions of the encrypted message (each version is decrypted by shifting the letters by n positions in one direction).
-After that, it compares each word of each version with an English dictionary. If any decrypted word is a valid English word, the whole version is considered to possibly be the correct decryption and is outputted to the console.
+After that, it compares each word of each version with an English dictionary. If any decrypted word is a valid English word, the whole version is considered to possibly be the correct decryption and is outputted to the console. <br>
+
 It also allows you to encrypt a message to get an example.
